@@ -40,4 +40,4 @@ module.exports = {
     'react/prop-types': 'off',
     'no-console': 2,
   },
-};
+}
