@@ -7,5 +7,16 @@
 |
 */
 
+const RegisterUserController = () => import('#controllers/auth/register_user_controller')
 import router from '@adonisjs/core/services/router'
-router.on('/inertia').renderInertia('home', { version: 6 })
+
+// Global matcher
+router.where('id', router.matchers.uuid())
+
+router.on('/').renderInertia('home', { version: 6 })
+
+router
+  .group(() => {
+    router.post('/register', [RegisterUserController])
+  })
+  .prefix('/api')
