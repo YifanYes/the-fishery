@@ -7,6 +7,7 @@ export const registerUserValidator = vine.compile(
     email: vine
       .string()
       .email()
+      .normalizeEmail()
       .use(uniqueRule({ table: 'users', column: 'email' })),
     password: vine.string().minLength(8),
   })
