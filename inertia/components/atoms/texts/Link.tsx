@@ -15,3 +15,5 @@ export const Link = (props: TextBaseType) => (
     {props.children}
   </BaseText>
 )
+
+export default Link

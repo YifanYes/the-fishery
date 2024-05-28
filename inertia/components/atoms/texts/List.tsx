@@ -26,3 +26,5 @@ export const List = (props: TextBaseType) => (
     ))}
   </BaseText>
 )
+
+export default List

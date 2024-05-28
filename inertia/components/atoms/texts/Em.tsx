@@ -14,3 +14,5 @@ export const Em = (props: TextBaseType) => (
     {props.children}
   </BaseText>
 )
+
+export default Em

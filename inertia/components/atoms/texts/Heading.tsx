@@ -14,3 +14,5 @@ export const Heading = (props: TextBaseType) => (
     {props.children}
   </BaseText>
 )
+
+export default Heading

@@ -14,3 +14,5 @@ export const Text = (props: TextBaseType) => (
     {props.children}
   </BaseText>
 )
+
+export default Text

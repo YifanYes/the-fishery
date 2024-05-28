@@ -14,3 +14,5 @@ export const Strong = (props: TextBaseType) => (
     {props.children}
   </BaseText>
 )
+
+export default Strong
