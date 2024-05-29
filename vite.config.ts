@@ -10,7 +10,9 @@ export default defineConfig({
     react(),
     adonisjs({ entrypoints: ['inertia/app/app.tsx'], reload: ['resources/views/**/*.edge'] }),
   ],
-
+  ssr: {
+    noExternal: ['styled-components', '@emotion/*'],
+  },
   /**
    * Define aliases for importing modules from
    * your frontend code
