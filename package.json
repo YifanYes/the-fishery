@@ -73,6 +73,7 @@
     "@adonisjs/static": "^1.1.1",
     "@adonisjs/vite": "^3.0.0-11",
     "@inertiajs/react": "^1.1.0",
+    "@preact/signals": "^1.2.3",
     "@vinejs/vine": "^2.0.0",
     "edge.js": "^6.0.2",
     "luxon": "^3.4.4",
