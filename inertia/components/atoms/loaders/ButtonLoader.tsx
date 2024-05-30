@@ -5,13 +5,15 @@ export type LoaderSize = {
   height?: string
 }
 
-const Circle = styled.div`
+const Circle = styled.div<{ size: LoaderSize | string }>`
   content: '';
   position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 100%;
-  border: calc(60px / 10) solid transparent;
+  border: ${({ size }) => `calc(${typeof size === 'string' ? size : size?.height}/ 4)`} solid
+    transparent;
+  margin-top: -0.15rem;
 `
 
 const Wrapper = styled.div<{ size: LoaderSize | string; color: string }>`
@@ -51,8 +53,8 @@ const ButtonLoader = ({
 }) => {
   return (
     <Wrapper size={size} color={color}>
-      <Circle />
-      <Circle />
+      <Circle size={size} />
+      <Circle size={size} />
     </Wrapper>
   )
 }
