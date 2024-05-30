@@ -1,9 +1,5 @@
 import styled from 'styled-components'
-
-export type LoaderSize = {
-  width?: string
-  height?: string
-}
+import { LoaderSize } from '.'
 
 const Inner = styled.div`
   box-sizing: border-box;
