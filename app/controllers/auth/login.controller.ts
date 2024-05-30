@@ -17,6 +17,8 @@ export default class LoginController {
 
       if (error.code === 'E_INVALID_CREDENTIALS')
         return response.badRequest({ message: 'Invalid credentials' })
+
+      response.internalServerError(error)
     }
   }
 }

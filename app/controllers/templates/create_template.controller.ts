@@ -21,7 +21,7 @@ export default class CreateTemplateController {
       })
     } catch (error) {
       console.error(error)
-      return response.badRequest(error.messages)
+      return response.internalServerError(error)
     }
   }
 }

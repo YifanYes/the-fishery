@@ -15,7 +15,7 @@ export default class RegisterUserController {
         data: UserTransformer(user),
       })
     } catch (error) {
-      return response.badRequest(error.messages)
+      response.internalServerError(error)
     }
   }
 }

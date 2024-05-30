@@ -23,7 +23,7 @@ export default class GetTemplatesListController {
       })
     } catch (error) {
       console.error(error)
-      return response.badRequest(error.messages)
+      return response.internalServerError(error)
     }
   }
 }
