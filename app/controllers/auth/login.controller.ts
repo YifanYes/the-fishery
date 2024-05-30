@@ -1,5 +1,5 @@
 import User from '#models/user'
-import { loginValidator } from '#validators/auth/login_validator'
+import { loginValidator } from '#validators/auth/login.validator'
 import type { HttpContext } from '@adonisjs/core/http'
 
 export default class LoginController {
@@ -10,7 +10,7 @@ export default class LoginController {
       const token = await User.accessTokens.create(user)
 
       return response.status(200).send({
-        token: token.value!.release(),
+        data: token.value!.release(),
       })
     } catch (error) {
       if (error.messages) return response.badRequest(error.messages)

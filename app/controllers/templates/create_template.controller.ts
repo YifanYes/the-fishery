@@ -1,5 +1,6 @@
 import Template from '#models/template'
-import { createTemplateValidator } from '#validators/templates/create_template_validator'
+import TemplateTransformer from '#transformers/templates/template.transformer'
+import { createTemplateValidator } from '#validators/templates/create_template.validator'
 import type { HttpContext } from '@adonisjs/core/http'
 
 export default class CreateTemplateController {
@@ -14,7 +15,10 @@ export default class CreateTemplateController {
         userId: user.id,
       })
 
-      return response.created({ message: 'Template created successfully', template })
+      return response.created({
+        message: 'Template created successfully',
+        data: TemplateTransformer(template),
+      })
     } catch (error) {
       console.error(error)
       return response.badRequest(error.messages)

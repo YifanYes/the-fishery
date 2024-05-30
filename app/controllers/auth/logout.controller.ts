@@ -10,6 +10,9 @@ export default class LogoutController {
     }
 
     await User.accessTokens.delete(user, token)
-    return response.ok({ message: 'Logged out' })
+    return response.ok({
+      message: 'Logged out',
+      data: null,
+    })
   }
 }
