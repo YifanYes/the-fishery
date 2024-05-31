@@ -58,6 +58,11 @@ const Colors = {
   yellow700: '#fbc02d',
   yellow800: '#f9a825',
   yellow900: '#f57f17',
+  onyx: '#404040',
+  chineseViolet: '#7B6D8D',
+  ecru: '#d5b776',
+  celadon: '#7bdcad',
+  antiFlashWhite: '#f0f0f0',
 }
 
 const Layout = {
