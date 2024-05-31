@@ -23,22 +23,22 @@ export type FlexDirectionElement = 'row_reverse' | 'column_reverse' | 'column' |
 
 export type AlignmentTypeElement =
   | 'start'
-  | 'flex_start'
+  | 'flex-start'
   | 'center'
   | 'end'
-  | 'flex_end'
+  | 'flex-end'
   | 'stretch'
   | 'baseline'
   | string
 
 export type JustifyTypeElement =
   | 'normal'
-  | 'start'
+  | 'flex-start'
   | 'center'
-  | 'end'
-  | 'between'
-  | 'around'
-  | 'evenly'
+  | 'flex-end'
+  | 'space-between'
+  | 'space-around'
+  | 'space-evenly'
   | 'stretch'
   | string
 

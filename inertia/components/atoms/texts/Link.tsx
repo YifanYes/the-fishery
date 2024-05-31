@@ -2,7 +2,7 @@ import { FontSizes, FontWeights } from '~/styles/default'
 import { TextBaseType } from '~/types/style.types'
 import BaseText from './BaseText'
 
-export const Link = (props: TextBaseType) => (
+export const Link = (props: TextBaseType & React.ComponentProps<'a'>) => (
   <BaseText
     {...props}
     as={props.as || 'a'}

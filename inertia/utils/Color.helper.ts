@@ -63,6 +63,7 @@ const Colors = {
   ecru: '#d5b776',
   celadon: '#7bdcad',
   antiFlashWhite: '#f0f0f0',
+  celadon700: '#6DC299',
 }
 
 const Layout = {

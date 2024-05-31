@@ -43,7 +43,7 @@ const StyledButton = styled.button<{
 
   &:hover {
     ${ThemeHelper.transition('opacity 0.25s ease-in-out')}
-    opacity: 0.9;
+    opacity: 0.8;
   }
 
   &:active,
@@ -99,9 +99,8 @@ const StyledButton = styled.button<{
 
     if (color === 'primary') {
       return `
-        box-shadow: inset 0 0 0 1px ${ColorHelper.Colors.black};
-        background-color: ${ColorHelper.Colors.teal};
-        color: ${ColorHelper.Colors.white};
+        background-color: ${ColorHelper.Colors.celadon700};
+        color: ${ColorHelper.Colors.antiFlashWhite};
       `
     }
 
@@ -135,7 +134,7 @@ const StyledButton = styled.button<{
       return `
         background-color: transparent;
         color: ${ColorHelper.Colors.blue};
-        text-decoration: underline;
+        text-decoration: none;
         padding: 0;
         margin: 0;
       `
@@ -145,7 +144,7 @@ const StyledButton = styled.button<{
       return `
         background-color: transparent;
         color: ${ColorHelper.Colors.blue};
-        text-decoration: underline;
+        text-decoration: none;
       `
     }
   }}
@@ -175,7 +174,6 @@ const Button = ({
   return (
     <StyledButton
       className={className}
-      type="button"
       color={color}
       size={size}
       onClick={disabled || loading ? undefined : onClick}

@@ -27,6 +27,7 @@ const FlexBase = styled.div<{
 `
 
 const Flex = ({
+  as,
   className,
   style,
   display = FlexDisplay.flex,
@@ -37,6 +38,7 @@ const Flex = ({
   gap,
   children,
 }: {
+  as?: string
   className?: string
   style?: { [key: string]: any }
   display?: FlexDisplayElement
@@ -51,6 +53,7 @@ const Flex = ({
 
   return (
     <FlexBase
+      {...(as ? { as } : {})}
       className={className}
       display={otherStyles.flex[display] || display}
       direction={otherStyles.flexDirection[direction] || direction}

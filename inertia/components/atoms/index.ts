@@ -1,5 +1,6 @@
 import { Button } from './buttons'
 import { InputError } from './errors'
+import { Logo } from './images'
 import { FormInput, Input } from './inputs'
 import { Box, Container, Flex, Grid, Page, Section } from './layout'
 import { ButtonLoader, Loader } from './loaders'
@@ -23,6 +24,7 @@ export {
   Link,
   List,
   Loader,
+  Logo,
   Page,
   Section,
   Strong,

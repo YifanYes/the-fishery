@@ -1,64 +1,31 @@
-import { fishOutline } from 'ionicons/icons';
-import styled from 'styled-components';
-import { ColorHelper } from '~/utils';
+import { useContext } from 'react'
+import styled from 'styled-components'
+import { ThemeContext } from '~/context/ThemeContext'
+import { ColorHelper, ThemeHelper } from '~/utils'
+import { Button, Flex, Link, Logo } from '../atoms'
 
-const Logo = styled.img`
-  height: 75px;
-  width: 75px;
+const NavbarContainer = styled(Flex)`
+  padding: 0.5rem 1.5rem;
+  background-color: ${ColorHelper.Colors.white};
+  box-shadow: ${ThemeHelper.boxShadow};
 `
 
-const NavbarContainer = styled.nav`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-  background-color: ${ColorHelper.Colors.white};
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-`;
-
-const NavLinks = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const NavLink = styled.a`
-  margin-right: 20px;
-  font-size: 1rem;
-  color: #333;
-  text-decoration: none;
-
-  &:hover {
-    color: ${ColorHelper.Colors.celadon};
-  }
-`;
-
-const LoginButton = styled.button`
-  padding: 10px 20px;
-  font-size: 1rem;
-  color: #fff;
-  background-color: ${ColorHelper.Colors.blue};
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-
-  &:hover {
-    background-color:${ColorHelper.Colors.celadon};
-  }
-`;
-
 const Navbar = () => {
+  const { fontSizes } = useContext(ThemeContext)
   return (
-    <NavbarContainer>
-      <Logo
-        src={fishOutline}
-      />
-      <NavLinks>
-        <NavLink href="/about">Sobre nosotros</NavLink>
-        <NavLink href="/events">Eventos</NavLink>
-        <LoginButton>Entrar</LoginButton>
-      </NavLinks>
+    <NavbarContainer direction="row" align="center" justify="space-between">
+      <Logo />
+      <Flex direction="row" align="center" gap="2.5rem">
+        <Link href="/about" color={ColorHelper.Colors.onyx} fontSize={fontSizes['3']}>
+          Sobre nosotros
+        </Link>
+        <Link href="/events" color={ColorHelper.Colors.onyx} fontSize={fontSizes['3']}>
+          Eventos
+        </Link>
+        <Button color="primary">Entrar</Button>
+      </Flex>
     </NavbarContainer>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
