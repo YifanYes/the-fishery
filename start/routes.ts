@@ -7,11 +7,12 @@
 |
 */
 
-const RegisterUserController = () => import('#controllers/auth/register_user_controller')
-const LoginController = () => import('#controllers/auth/login_controller')
-import LogoutController from '#controllers/auth/logout_controller'
+const RegisterUserController = () => import('#controllers/auth/register_user.controller')
+const LoginController = () => import('#controllers/auth/login.controller')
+import LogoutController from '#controllers/auth/logout.controller'
 import { middleware } from '#start/kernel'
 import router from '@adonisjs/core/services/router'
+import './routes/private/templates.routes.js'
 
 // Global matcher
 router.where('id', router.matchers.uuid())
@@ -20,6 +21,7 @@ router.on('/').renderInertia('home', { version: 6 })
 
 router
   .group(() => {
+    // Auth
     router.post('/register', [RegisterUserController])
     router.post('/login', [LoginController])
 
@@ -28,5 +30,7 @@ router
         guards: ['api'],
       })
     )
+
+    // Templates
   })
   .prefix('/api')
