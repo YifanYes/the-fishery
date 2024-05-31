@@ -1,5 +1,18 @@
 import { Control, Controller, FieldValues } from 'react-hook-form'
-import BaseInput, { InputType } from './Input'
+import Input, { InputType } from './Input'
+
+export type FormInputProps = {
+  className?: string
+  type?: InputType
+  label?: string
+  ['data-field']: string
+  placeholder?: string
+  required?: boolean
+  control?: Control<FieldValues>
+  startIcon?: React.ReactNode
+  endIcon?: React.ReactNode
+  setInputState?: (props: any) => void
+}
 
 const FormInput = ({
   className,
@@ -12,18 +25,7 @@ const FormInput = ({
   startIcon,
   endIcon,
   setInputState,
-}: {
-  className?: string
-  type?: InputType
-  label?: string
-  ['data-field']: string
-  placeholder?: string
-  required?: boolean
-  control?: Control<FieldValues>
-  startIcon?: React.ReactNode
-  endIcon?: React.ReactNode
-  setInputState?: (props: any) => void
-}) => {
+}: FormInputProps) => {
   return (
     <Controller
       control={control}
@@ -32,7 +34,7 @@ const FormInput = ({
         field: { onChange, onBlur, value, disabled },
         fieldState: { invalid, isTouched, isDirty, error },
       }) => (
-        <BaseInput
+        <Input
           className={className}
           type={type}
           placeholder={placeholder}
