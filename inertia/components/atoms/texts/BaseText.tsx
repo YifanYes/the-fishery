@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import styled from 'styled-components'
 import { ThemeContext } from '~/context/ThemeContext'
 import { Cursors, FontSizes, FontWeights } from '~/styles/default'
-import { CursorElement, FontWeightElement } from '~/types/style.types'
+import { TextBaseType } from '~/types/style.types'
 import { ColorHelper, ThemeHelper } from '~/utils'
 
 const Text = styled.div<{
@@ -12,6 +12,10 @@ const Text = styled.div<{
   size: { width: string; height: string } | string
   color: string
 }>`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
   ${({ cursor }) => `cursor: ${cursor};`};
   ${({ color }) => `color: ${color};`};
   ${({ fontWeight }: any) => ThemeHelper.fontFamily(fontWeight)}
@@ -24,37 +28,20 @@ const Text = styled.div<{
   }}
 `
 
-const BaseText = ({
-  as,
-  className,
-  cursor = Cursors.default,
-  size = 'fit-content',
-  color = ColorHelper.Colors.primary,
-  fontSize = FontSizes['1'],
-  fontWeight = FontWeights.regular,
-  children,
-}: {
-  as?: string
-  className?: string
-  cursor?: CursorElement
-  size?: { width: string; height: string } | string
-  color?: string
-  fontSize?: string
-  fontWeight?: FontWeightElement
-  children?: any
-}) => {
+const BaseText = (props: TextBaseType) => {
   const { fontSizes = {}, fontWeights = {}, cursors = {} } = useContext(ThemeContext)
   return (
     <Text
-      as={as}
-      className={className}
-      cursor={cursors[cursor] || cursor}
-      size={size}
-      color={color}
-      fontWeight={fontWeights[fontWeight] || fontWeight}
-      fontSize={fontSizes[fontSize] || fontSize}
+      {...props}
+      as={props.as}
+      className={props.className}
+      cursor={props.cursor ? cursors[props.cursor] : Cursors.default}
+      size={props.size || 'fit-content'}
+      color={props.color || ColorHelper.Colors.primary}
+      fontWeight={props.fontWeight ? fontWeights[props.fontWeight] : FontWeights.regular}
+      fontSize={props.fontSize ? fontSizes[props.fontSize] : FontSizes['1']}
     >
-      {children}
+      {props.children}
     </Text>
   )
 }

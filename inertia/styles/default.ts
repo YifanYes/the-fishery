@@ -13,7 +13,6 @@ import {
   JustifyTypeObject,
   ShadowObject,
   StyleObject,
-  WindowBreakpointObject,
 } from '~/types/style.types'
 
 export const FontSizes: StyleObject = {
@@ -86,14 +85,6 @@ export const Appearance: AppearanceObject = {
   default: 'default',
   dark: 'dark',
   light: 'light',
-}
-
-export const WindowBreakpoints: WindowBreakpointObject = {
-  xs: 0,
-  sm: 576,
-  md: 768,
-  lg: 992,
-  xl: 1200,
 }
 
 export const Cursors: CursorObject = {

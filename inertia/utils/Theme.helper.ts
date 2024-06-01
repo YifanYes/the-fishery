@@ -1,5 +1,13 @@
 import { css } from 'styled-components'
-import { DeviceElement, WindowBreakpointObject } from '~/types/style.types'
+import { DeviceElement } from '~/types/style.types'
+
+const breakpoints: { [key: string]: number } = {
+  xs: 0,
+  sm: 576,
+  md: 768,
+  lg: 992,
+  xl: 1200,
+}
 
 const fontFamily = (weight: string) => `
   font-family: 'Inter', sans-serif;
@@ -74,21 +82,21 @@ const textOverflow = (width: string) => `
   text-overflow: ellipsis;
 `
 
-const isDevice = (device: string, devices: DeviceElement[]): device is DeviceElement =>
+const isDevice = (device: DeviceElement, devices: DeviceElement[]): device is DeviceElement =>
   devices.includes(device)
 
-const isMobile = (width: number, breakpoints: WindowBreakpointObject) => width <= breakpoints.md
+const isMobile = (width: number) => width <= breakpoints.md
 
-const isSmallDevice = (width: number, breakpoints: WindowBreakpointObject) =>
-  width <= breakpoints.lg
+const isSmallDevice = (width: number) => width <= breakpoints.lg
 
-const needSplash = (width: number, breakpoints: WindowBreakpointObject) => width <= breakpoints.lg
+const needSplash = (width: number) => width <= breakpoints.lg
 
-const media = (device: DeviceElement, content: string, breakpoints: WindowBreakpointObject) => `
-  @media (min-width: ${breakpoints[device]}px) {
+const media = (device: DeviceElement, content: string) => {
+  return ` @media (min-width: ${breakpoints[device]}px) {
     ${content}
   }
 `
+}
 
 const isHexColor = (hex: string | undefined) => {
   if (!hex) {

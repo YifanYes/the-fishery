@@ -42,11 +42,11 @@ export type JustifyTypeElement =
   | 'stretch'
   | string
 
-export type FlexWrapElement = 'no_wrap' | 'wrap' | 'wrap_reverse' | string
+export type FlexWrapElement = 'nowrap' | 'wrap' | 'wrap-reverse' | string
 
 export type GridDisplayElement = 'hidden' | 'inline_grid' | 'grid' | string
 
-export type GridFlowElement = 'row' | 'column' | 'dense' | 'row_dense' | 'column_dense' | string
+export type GridFlowElement = 'row' | 'column' | 'dense' | 'row-dense' | 'column-dense' | string
 
 export type BoxElement = 'div' | 'span' | string
 
@@ -70,7 +70,7 @@ export type CursorElement =
   | 'switch'
   | string
 
-export type DeviceElement = 'initial' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | string
+export type DeviceElement = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 
 export type FlexDisplayObject = { [key: FlexDisplayElement]: string }
 
@@ -89,8 +89,6 @@ export type GridFlowObject = { [key: GridFlowElement]: string }
 export type BoxObject = { [key: BoxElement]: string }
 
 export type AppearanceObject = { [key: AppearanceElement]: string }
-
-export type WindowBreakpointObject = { [key: DeviceElement]: number }
 
 export type CursorObject = { [key: CursorElement]: string }
 
@@ -138,6 +136,5 @@ export type MainStyleThemeObject = {
   cursors: CursorObject
   borderRadius: BorderRadiusObject
   devices: DeviceElement[]
-  windowBreakpoints: WindowBreakpointObject
   otherStyles: OtherStylesObject
 }

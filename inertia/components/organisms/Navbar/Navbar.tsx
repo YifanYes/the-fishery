@@ -1,13 +1,13 @@
 import { useContext } from 'react'
 import styled from 'styled-components'
+import { Button, Flex, Link, Logo } from '~/components/atoms'
 import { ThemeContext } from '~/context/ThemeContext'
-import { ColorHelper, ThemeHelper } from '~/utils'
-import { Button, Flex, Link, Logo } from '../atoms'
+import { ColorHelper } from '~/utils'
 
 const NavbarContainer = styled(Flex)`
-  padding: 0.5rem 1.5rem;
+  width: -webkit-fill-available;
+  padding: 0.25rem 1.5rem;
   background-color: ${ColorHelper.Colors.white};
-  box-shadow: ${ThemeHelper.boxShadow};
 `
 
 const Navbar = () => {

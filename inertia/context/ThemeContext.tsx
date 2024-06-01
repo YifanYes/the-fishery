@@ -15,7 +15,6 @@ import {
   JustifyType,
   Shadows,
   Spacing,
-  WindowBreakpoints,
 } from '~/styles/default'
 import {
   AppearanceElement,
@@ -29,7 +28,6 @@ import {
   OtherStylesObject,
   ShadowObject,
   StyleObject,
-  WindowBreakpointObject,
 } from '~/types/style.types'
 
 type ThemeContextType = {
@@ -43,7 +41,6 @@ type ThemeContextType = {
   cursors: CursorObject
   borderRadius: BorderRadiusObject
   devices: DeviceElement[]
-  windowBreakpoints: WindowBreakpointObject
   otherStyles: OtherStylesObject
   setThemeValues: (values: any) => void
   setCurrentAppearance: (theme: AppearanceElement) => void
@@ -60,7 +57,6 @@ const initialThemeContext: ThemeContextType = {
   cursors: Cursors,
   borderRadius: BorderRadius,
   devices: Devices,
-  windowBreakpoints: WindowBreakpoints,
   otherStyles: {
     flex: FlexDisplay,
     flexDirection: FlexDirection,

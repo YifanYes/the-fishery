@@ -23,7 +23,7 @@ const FlexBase = styled.div<{
   align-items: ${({ align }: any) => align};
   justify-content: ${({ justify }: any) => justify};
   flex-wrap: ${({ wrap }: any) => wrap};
-  ${({ gap }) => `gap: ${gap};`}
+  ${({ gap }) => gap && `gap: ${gap};`}
 `
 
 const Flex = ({
