@@ -1,34 +1,5 @@
 import styled from 'styled-components'
-import { Flex } from '~/components/atoms'
 import { ColorHelper } from '~/utils'
-
-const HeroContainer = styled(Flex)`
-  height: calc(100vh - 86px);
-`
-
-const ContentWrapper = styled.div`
-  display: flex;
-  width: 80%;
-  max-width: 1200px;
-  margin: 0 auto;
-`
-
-const TextContent = styled.div`
-  flex: 1;
-  padding: 20px;
-`
-
-const Title = styled.h1`
-  font-size: 3rem;
-  margin-bottom: 10px;
-  color: #333;
-`
-
-const Subtitle = styled.h2`
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  color: #666;
-`
 
 const HeroButton = styled.button`
   padding: 10px 20px;
@@ -57,21 +28,21 @@ const HeroImage = styled.img`
 
 const Hero = () => {
   return (
-    <HeroContainer align="center" justify="center" direction="row">
-      <ContentWrapper>
-        <TextContent>
-          <Title>Bienvenido a The Fishery</Title>
-          <Subtitle>No limpiamos pescado</Subtitle>
+    <div className="h-[calc(100vh-86px)] flex items-center justify-center flex-row">
+      <div className="flex w-[80%] max-w-[1200px] my-0 mx-auto">
+        <div className="flex-1 p-[20px]">
+          <h1 className="text-[#333] text-[3rem] mb-[10px]">Bienvenido a The Fishery</h1>
+          <h2 className="text-[#666] text-[1.5rem] mb-[20px]">No limpiamos pescado</h2>
           <HeroButton>Quiero entrar</HeroButton>
-        </TextContent>
+        </div>
         <ImageContent>
           <HeroImage
             src="https://lh6.googleusercontent.com/proxy/ax5PLOgdlM4q6pukrrc_bB--ZgxjX_PVLfYxmEdK9JJxAGSeyLloVh70lsE4r6XJE2MxmImoU3PDpMScNfKdeIKbcACTpX1KGq-TfdfRkV9DZEi0KoLx-2Sd21hO4FXZ8LUBGDtWZIXv"
             alt="Hero Image"
           />
         </ImageContent>
-      </ContentWrapper>
-    </HeroContainer>
+      </div>
+    </div>
   )
 }
 

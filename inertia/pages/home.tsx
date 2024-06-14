@@ -1,15 +1,7 @@
 import { Head } from '@inertiajs/react'
-import styled from 'styled-components'
-import { Flex } from '~/components/atoms'
 import { Features, Footer, Hero } from '~/components/molecules'
 import { FeatureCardProps } from '~/components/molecules/Features/Features'
 import { Navbar } from '~/components/organisms'
-
-const Wrapper = styled(Flex)`
-  height: 100%;
-  width: 100%;
-  font-family: Inter;
-`
 
 const features: FeatureCardProps[] = [
   {
@@ -35,12 +27,12 @@ export default function Home() {
   return (
     <>
       <Head title="The Fishery" />
-      <Wrapper direction="column" align="center">
+      <div className="flex flex-col items-center flex-nowrap w-full h-full gap-16">
         <Navbar />
         <Hero />
         <Features features={features} />
         <Footer />
-      </Wrapper>
+      </div>
     </>
   )
 }

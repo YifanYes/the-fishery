@@ -1,13 +1,13 @@
-import { fishOutline } from 'ionicons/icons'
 import styled from 'styled-components'
 import { ThemeHelper } from '~/utils'
 
 const Element = styled.img`
-  ${ThemeHelper.size('5rem')}
+  ${ThemeHelper.size('6rem', 'auto')}
+  padding: 1rem;
 `
 
 const Logo = () => {
-  return <Element src={fishOutline} />
+  return <Element src="/images/logo.webp" />
 }
 
 export default Logo
