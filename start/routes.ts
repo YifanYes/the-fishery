@@ -17,7 +17,7 @@ import './routes/private/templates.routes.js'
 // Global matcher
 router.where('id', router.matchers.uuid())
 
-router.on('/').renderInertia('home', { version: 6 })
+router.on('/').renderInertia('Home/index', { version: 6 })
 
 router
   .group(() => {
