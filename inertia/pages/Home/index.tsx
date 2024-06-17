@@ -5,7 +5,7 @@ import { aboutUs, features, footer, hero, navbar } from './home.data'
 
 export default function Home() {
   return (
-    <main className="bg-[#f0f0f0] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(144, 144, 144, 0.3),rgba(255,255,255,0))]">
+    <main className="bg-[#f7f8fa] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(144, 144, 144, 0.3),rgba(255,255,255,0))]">
       <Head>
         <title>Welcome</title>
         <link rel="icon" type="svg+xml" sizes="32x32" href="/images/logo.webp" />

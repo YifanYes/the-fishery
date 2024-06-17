@@ -8,7 +8,7 @@ const Hero = ({ hero }: { hero: HeroProps }) => {
           {hero.button && (
             <button
               {...(hero.button ? { onClick: hero.button.onClick } : {})}
-              className="bg-[#5bc592] text-[#f0f0f0] px-6 py-3 rounded-full"
+              className="bg-[#5bc592] text-[#f7f8fa] px-6 py-3 rounded-full"
             >
               {hero.button.text}
             </button>
