@@ -4,7 +4,7 @@ const Login = () => {
   return (
     <>
       <Head>
-        <title>The Fishery - Login</title>
+        <title>Login</title>
         <link rel="icon" type="svg+xml" sizes="32x32" href="/images/logo.webp" />
         <meta
           name="The Fishery"

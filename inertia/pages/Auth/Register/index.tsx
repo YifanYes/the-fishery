@@ -4,7 +4,7 @@ const Register = () => {
   return (
     <>
       <Head>
-        <title>The Fishery - Register</title>
+        <title>Register</title>
         <link rel="icon" type="svg+xml" sizes="32x32" href="/images/logo.webp" />
         <meta
           name="The Fishery"

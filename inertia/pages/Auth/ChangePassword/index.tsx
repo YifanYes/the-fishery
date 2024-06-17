@@ -4,7 +4,7 @@ const ChangePassword = () => {
   return (
     <>
       <Head>
-        <title>The Fishery - Change Password</title>
+        <title>Change Password</title>
         <link rel="icon" type="svg+xml" sizes="32x32" href="/images/logo.webp" />
         <meta
           name="The Fishery"
