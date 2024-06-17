@@ -1,48 +1,30 @@
-import styled from 'styled-components'
-import { ColorHelper } from '~/utils'
-
-const HeroButton = styled.button`
-  padding: 10px 20px;
-  font-size: 1rem;
-  color: #fff;
-  background-color: ${ColorHelper.Colors.blue};
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: ${ColorHelper.Colors.celadon};
-  }
-`
-
-const ImageContent = styled.div`
-  flex: 1;
-  padding: 20px;
-`
-
-const HeroImage = styled.img`
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-`
-
-const Hero = () => {
+const Hero = ({ hero }: { hero: HeroProps }) => {
   return (
-    <div className="h-[calc(100vh-86px)] flex items-center justify-center flex-row">
-      <div className="flex w-[80%] max-w-[1200px] my-0 mx-auto">
-        <div className="flex-1 p-[20px]">
-          <h1 className="text-[#333] text-[3rem] mb-[10px]">Bienvenido a The Fishery</h1>
-          <h2 className="text-[#666] text-[1.5rem] mb-[20px]">No limpiamos pescado</h2>
-          <HeroButton>Quiero entrar</HeroButton>
+    <section id="home" className="relative pt-24 md:pt-64">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between h-full px-6 md:px-12">
+        <div className="text-center md:text-left md:w-1/2">
+          <h1 className="text-5xl font-bold text-gray-900 mb-4">{hero.title}</h1>
+          {hero.description && <p className="text-xl text-gray-700 mb-8">{hero.description}</p>}
+          {hero.button && (
+            <button
+              {...(hero.button ? { onClick: hero.button.onClick } : {})}
+              className="bg-[#5bc592] text-[#f0f0f0] px-6 py-3 rounded-full"
+            >
+              {hero.button.text}
+            </button>
+          )}
         </div>
-        <ImageContent>
-          <HeroImage
-            src="https://lh6.googleusercontent.com/proxy/ax5PLOgdlM4q6pukrrc_bB--ZgxjX_PVLfYxmEdK9JJxAGSeyLloVh70lsE4r6XJE2MxmImoU3PDpMScNfKdeIKbcACTpX1KGq-TfdfRkV9DZEi0KoLx-2Sd21hO4FXZ8LUBGDtWZIXv"
-            alt="Hero Image"
-          />
-        </ImageContent>
+        <div className="md:w-1/2 mt-12 md:mt-0 w-full h-64 rounded-xl">
+          {hero.image && (
+            <img
+              src={hero.image}
+              alt="Hero"
+              className="w-full h-full object-fit rounded-xl object-cover"
+            />
+          )}
+        </div>
       </div>
-    </div>
+    </section>
   )
 }
 

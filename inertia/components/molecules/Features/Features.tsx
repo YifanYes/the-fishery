@@ -1,33 +1,28 @@
-import styled from 'styled-components'
-import { Grid } from '~/components/atoms'
-import { ThemeHelper } from '~/utils'
 import FeatureCard from './FeatureCard'
 
-export type FeatureCardProps = {
-  img: string
-  title: string
-  description: string
-}
-
-const Wrapper = styled(Grid)`
-  width: 100%;
-  ${ThemeHelper.media('xs', 'width: 100%;')}
-  ${ThemeHelper.media('sm', 'width: 80%;')}
-  ${ThemeHelper.media('md', 'width: 60%;')}
-`
-
-const Features = ({ features }: { features: FeatureCardProps[] }) => {
+const Features = ({ features }: { features: FeaturesProps }) => {
   return (
-    <Wrapper columns="1" justify="center" align="center" gap="4rem">
-      {features.map((item, index) => (
-        <FeatureCard
-          key={index}
-          imageSrc={item.img}
-          title={item.title}
-          description={item.description}
-        />
-      ))}
-    </Wrapper>
+    <section id="features" className="pt-36">
+      <div className="max-w-7xl mx-auto px-8 md:px-12">
+        {(features.title || features.description) && (
+          <div className="text-center">
+            {features.title && (
+              <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                {features.title}
+              </h2>
+            )}
+            {features.description && (
+              <p className="mt-4 text-lg text-gray-500">{features.description}</p>
+            )}
+          </div>
+        )}
+        <div className="mt-16 grid grid-cols-1 gap-y-12 md:grid-cols-3 md:gap-x-8 md:gap-y-0">
+          {features.cards.map((feature) => (
+            <FeatureCard key={feature.title} {...feature} />
+          ))}
+        </div>
+      </div>
+    </section>
   )
 }
 

@@ -1,63 +1,37 @@
-import { logoInstagram, logoLinkedin, megaphoneOutline } from 'ionicons/icons'
-import styled from 'styled-components'
-import { Flex, Heading, Image, Link } from '~/components/atoms'
-import { ColorHelper } from '~/utils'
-
-const FooterContainer = styled(Flex)`
-  width: -webkit-fill-available;
-  padding: 2rem;
-  background-color: ${ColorHelper.Colors.onyx};
-  margin-top: 10rem;
-`
-
-const socialMedia = [
-  {
-    src: logoInstagram,
-    name: 'Instagram',
-    href: 'https://instagram.com',
-  },
-  {
-    src: megaphoneOutline,
-    name: 'Meetup',
-    href: 'https://meetup.com',
-  },
-  {
-    src: logoLinkedin,
-    name: 'Linkedin',
-    href: 'https://linkedin.com',
-  },
-]
-
-const Footer = () => {
+const Footer = ({ footer }: { footer: FooterProps }) => {
   return (
-    <FooterContainer direction="row" justify="space-evenly" align="center" wrap="wrap">
-      <Flex direction="column" gap="1.5rem">
-        <Heading level={3} color="#fff">
-          Redes sociales
-        </Heading>
-        <Flex direction="row" gap="2rem">
-          {socialMedia.map((item, index) => (
-            <Link key={index} href={item.href} target="_blank" color="#fff">
-              <Image src={item.src} width="20px" height="20px" color="#fff" />
-              <span>{item.name}</span>
-            </Link>
-          ))}
-        </Flex>
-      </Flex>
-      <Flex direction="column" gap="1.5rem">
-        <Heading level={3} color="#fff">
-          Documentos
-        </Heading>
-        <Flex direction="row" gap="2rem">
-          <Link href="/terms" color="#fff">
-            Términos y condiciones
-          </Link>
-          <Link href="/privacy" color="#fff">
-            Política de privacidad
-          </Link>
-        </Flex>
-      </Flex>
-    </FooterContainer>
+    <footer className="bg-white dark:bg-[#404040] w-full mt-24">
+      <div className="w-full mx-auto max-w-screen-xl p-4 flex flex-col-reverse md:flex-row md:items-center md:justify-between">
+        {footer.copyright && <span className="text-sm text-gray-400">{footer.copyright}</span>}
+        <div className="flex flex-col gap-4 mb-8 md:items-end md:justify-end md:mb-0">
+          {footer.socials && (
+            <div className="flex flex-row gap-4 mb-4 md:mb-0">
+              {footer.socials.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  target="_blank"
+                  className="text-gray-400 hover:text-gray-300"
+                >
+                  <item.icon width="1.4rem" height="1.4rem" />
+                </a>
+              ))}
+            </div>
+          )}
+          {footer.links && (
+            <ul className="flex flex-wrap items-center mt-3 gap-6 sm:mt-0">
+              {footer.links.map((item) => (
+                <li key={item.label}>
+                  <a href={item.href} className="text-sm text-gray-400 hover:text-gray-300">
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </div>
+    </footer>
   )
 }
 

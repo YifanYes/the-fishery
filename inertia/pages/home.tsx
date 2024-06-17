@@ -1,38 +1,26 @@
 import { Head } from '@inertiajs/react'
-import { Features, Footer, Hero } from '~/components/molecules'
-import { FeatureCardProps } from '~/components/molecules/Features/Features'
+import { AboutUs, Features, Footer, Hero } from '~/components/molecules'
 import { Navbar } from '~/components/organisms'
-
-const features: FeatureCardProps[] = [
-  {
-    img: 'https://djnw5a0wszky0.cloudfront.net/inkfactorywp/wp-content/uploads/2019/04/DrawingonBoard_BlogImage4.jpg.webp',
-    title: 'Desarrolla tu idea de negocio',
-    description:
-      'Utiliza nuestra metodología paso a paso para desarrollar tu idea de negocio y llevarla al mercado en tiempo récord.',
-  },
-  {
-    img: 'https://tradulingua.com/wp-content/uploads/2022/08/networking-que-es.jpg',
-    title: 'Conecta con perfiles afines',
-    description: 'Conecta y encuentra co-fundadores, inversores y talento en nuestra red.',
-  },
-  {
-    img: 'https://www.rae.es/sites/default/files/styles/paragraph_galeria_grande/public/2020-06/galeria.biblioteca-3.jpg?h=c9f93661&itok=LXhOmrbv',
-    title: 'Accede a nuestra librería',
-    description:
-      'Accede a nuestra librería de recursos con vídeos, guías y resúmenes de libros para.',
-  },
-]
+import { aboutUs, features, footer, hero, navbar } from './home.data'
 
 export default function Home() {
   return (
-    <>
-      <Head title="The Fishery" />
-      <div className="flex flex-col items-center flex-nowrap w-full h-full gap-16">
-        <Navbar />
-        <Hero />
+    <main className="bg-[#f0f0f0] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(144, 144, 144, 0.3),rgba(255,255,255,0))]">
+      <Head>
+        <title>The Fishery</title>
+        <link rel="icon" type="svg+xml" sizes="32x32" href="/images/logo.webp" />
+        <meta
+          name="The Fishery"
+          content="The Fishery helps you develop your projects from the idea to the project success"
+        />
+      </Head>
+      <div className="flex flex-col items-center flex-nowrap w-full h-full gap-32">
+        <Navbar navbar={navbar} />
+        <Hero hero={hero} />
         <Features features={features} />
-        <Footer />
+        <AboutUs aboutUs={aboutUs} />
+        <Footer footer={footer} />
       </div>
-    </>
+    </main>
   )
 }
