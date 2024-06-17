@@ -1,10 +1,10 @@
 import { Head } from '@inertiajs/react'
 
-const Register = () => {
+const ChangePassword = () => {
   return (
     <>
       <Head>
-        <title>The Fishery - Register</title>
+        <title>The Fishery - Change Password</title>
         <link rel="icon" type="svg+xml" sizes="32x32" href="/images/logo.webp" />
         <meta
           name="The Fishery"
@@ -15,7 +15,7 @@ const Register = () => {
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img className="mx-auto h-24 w-auto" src="/images/logo.webp" alt="The Fishery" />
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-            Create a new account
+            Change your password
           </h2>
         </div>
 
@@ -43,7 +43,7 @@ const Register = () => {
                   htmlFor="password"
                   className="block text-sm font-medium leading-6 text-gray-900"
                 >
-                  Password
+                  New password
                 </label>
               </div>
               <div className="mt-2">
@@ -64,7 +64,7 @@ const Register = () => {
                   htmlFor="password"
                   className="block text-sm font-medium leading-6 text-gray-900"
                 >
-                  Repeat Password
+                  Repeat password
                 </label>
               </div>
               <div className="mt-2">
@@ -84,24 +84,14 @@ const Register = () => {
                 type="submit"
                 className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
-                Join The Fishery
+                Change password
               </button>
             </div>
           </form>
-
-          <p className="mt-10 text-center text-sm text-gray-500">
-            Already have an account?{' '}
-            <a
-              href="/login"
-              className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
-            >
-              Login here
-            </a>
-          </p>
         </div>
       </div>
     </>
   )
 }
 
-export default Register
+export default ChangePassword
