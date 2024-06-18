@@ -12,7 +12,10 @@ const LoginController = () => import('#controllers/auth/login.controller')
 import LogoutController from '#controllers/auth/logout.controller'
 import { middleware } from '#start/kernel'
 import router from '@adonisjs/core/services/router'
+
+// Private routes
 import './routes/private/templates.routes.js'
+import './routes/private/users.routes.js'
 
 // Global matcher
 router.where('id', router.matchers.uuid())
@@ -33,7 +36,5 @@ router
         guards: ['api'],
       })
     )
-
-    // Templates
   })
   .prefix('/api')
