@@ -17,7 +17,6 @@ export const navbar: NavbarProps = {
     {
       label: 'Acceder',
       type: 'primary',
-      onClick: () => window.location.assign('/login'),
     },
   ],
   links: [

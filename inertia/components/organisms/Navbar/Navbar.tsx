@@ -17,7 +17,7 @@ const Navbar = ({ navbar }: { navbar: NavbarProps }) => {
             <button
               key={index}
               {...(onClick ? { onClick } : {})}
-              className="bg-[#5bc592] text-[#f7f8fa] px-4 py-2 rounded-full"
+              className="bg-[#5bc592] text-[#f0f0f0] px-4 py-2 rounded-full"
             >
               {label}
             </button>
