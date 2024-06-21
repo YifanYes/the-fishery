@@ -59,3 +59,19 @@ type AboutUsProps = {
     value: string
   }[]
 }
+
+type NotificationContent = {
+  type: TypeNotificationUI
+  message: string
+}
+
+type TypeNotificationUI =
+  | 'default'
+  | 'primary'
+  | 'secondary'
+  | 'success'
+  | 'danger'
+  | 'warning'
+  | 'info'
+  | 'light'
+  | 'dark'
