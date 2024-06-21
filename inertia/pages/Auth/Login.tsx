@@ -76,14 +76,16 @@ const Login = () => {
               >
                 Contraseña
               </label>
-              <div className="text-sm">
-                <a
-                  href="/change-password"
-                  className="font-semibold text-[#5bc592] hover:text-[#7bdcad] transition-colors duration-200 ease-in-out"
-                >
-                  ¿Has olvidado tu contraseña?
-                </a>
-              </div>
+              {false && (
+                <div className="text-sm">
+                  <a
+                    href="/change-password"
+                    className="font-semibold text-[#5bc592] hover:text-[#7bdcad] transition-colors duration-200 ease-in-out"
+                  >
+                    ¿Has olvidado tu contraseña?
+                  </a>
+                </div>
+              )}
             </div>
             <div className="mt-2 space-y-1">
               <input
