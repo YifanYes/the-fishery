@@ -4,12 +4,8 @@ import { useMemo } from 'react'
 import * as Yup from 'yup'
 import { FormHelper } from '~/helpers'
 import { User } from '~/models'
-import { useStore } from '~/state'
 
 const Register = () => {
-  const user = useStore((state) => state.user)
-  console.log(user)
-
   const validationSchema = useMemo(
     () =>
       Yup.object({
