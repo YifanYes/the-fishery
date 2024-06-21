@@ -78,20 +78,24 @@
     "@adonisjs/shield": "^8.1.1",
     "@adonisjs/static": "^1.1.1",
     "@adonisjs/vite": "^3.0.0-11",
-    "@hookform/resolvers": "^3.4.2",
     "@inertiajs/react": "^1.1.0",
     "@preact/signals": "^1.2.3",
     "@remixicon/react": "^4.2.0",
+    "@types/js-cookie": "^3.0.6",
     "@vinejs/vine": "^2.0.0",
+    "axios": "^1.7.2",
     "edge.js": "^6.0.2",
+    "formik": "^2.4.6",
+    "js-cookie": "^3.0.5",
     "luxon": "^3.4.4",
     "pg": "^8.11.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-hook-form": "^7.51.5",
+    "react-hot-toast": "^2.4.1",
     "reflect-metadata": "^0.2.2",
     "sonner": "^1.4.41",
-    "zod": "^3.23.8"
+    "yup": "^1.4.0",
+    "zustand": "^4.5.2"
   },
   "hotHook": {
     "boundaries": [

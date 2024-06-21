@@ -23,7 +23,6 @@ router.where('id', router.matchers.uuid())
 router.on('/').renderInertia('Home/index', { version: 6 })
 router.on('/login').renderInertia('Auth/Login/index', { version: 6 })
 router.on('/register').renderInertia('Auth/Register/index', { version: 6 })
-router.on('/change-password').renderInertia('Auth/ChangePassword/index', { version: 6 })
 
 router
   .group(() => {
