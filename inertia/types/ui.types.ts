@@ -60,12 +60,12 @@ type AboutUsProps = {
   }[]
 }
 
-export type NotificationContent = {
+type NotificationContent = {
   type: TypeNotificationUI
   message: string
 }
 
-export type TypeNotificationUI =
+type TypeNotificationUI =
   | 'default'
   | 'primary'
   | 'secondary'

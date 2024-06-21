@@ -1,5 +1,4 @@
 import toast, { Renderable, ValueOrFunction } from 'react-hot-toast'
-import { NotificationContent } from '~/types/ui.types'
 import Config from './Config.service'
 
 const session = {
