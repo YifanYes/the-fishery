@@ -4,7 +4,7 @@ import { UserSliceType } from '~/types/state.types'
 
 const createUserSlice: StateCreator<UserSliceType, [], [], UserSliceType> = (set) => ({
   user: undefined,
-  setUser: (user: User) => set(() => ({ user })),
+  setUser: (user?: User) => set(() => ({ user })),
 })
 
 export default createUserSlice
