@@ -21,8 +21,6 @@ import './routes/private/users.routes.js'
 router.where('id', router.matchers.uuid())
 
 router.on('/').renderInertia('Home/index', { version: 6 })
-router.on('/login').renderInertia('Auth/Login/index', { version: 6 })
-router.on('/register').renderInertia('Auth/Register/index', { version: 6 })
 
 router
   .group(() => {
