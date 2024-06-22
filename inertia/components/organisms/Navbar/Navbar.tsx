@@ -4,7 +4,6 @@ import { AuthContext } from '~/context/AuthContext'
 
 const Navbar = ({ navbar }: { navbar: NavbarProps }) => {
   const { logout, isLogged } = useContext(AuthContext)
-  console.log(isLogged)
 
   return (
     <nav className="hidden md:block bg-opacity-50 backdrop-blur-lg px-4 fixed w-full top-0 z-50">
