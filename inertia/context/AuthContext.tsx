@@ -64,7 +64,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
     setupContext()
   }, [setupContext, trigger])
 
-  const autoLogin = (): Promise<boolean> =>
+  const autoLogin = async (): Promise<boolean> =>
     new Promise(async (resolve, reject) => {
       try {
         setIsLoading(true)
@@ -87,7 +87,13 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
       }
     })
 
-  const login = ({ email, password }: { email: string; password: string }): Promise<boolean> =>
+  const login = async ({
+    email,
+    password,
+  }: {
+    email: string
+    password: string
+  }): Promise<boolean> =>
     new Promise(async (resolve, reject) => {
       try {
         setIsLoading(true)
@@ -106,7 +112,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
       }
     })
 
-  const register = ({
+  const register = async ({
     username,
     password,
     email,
@@ -130,7 +136,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
       }
     })
 
-  const logout = (): Promise<boolean> =>
+  const logout = async (): Promise<boolean> =>
     new Promise(async (resolve, reject) => {
       try {
         await Api.post(`/api/logout`)

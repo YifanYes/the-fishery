@@ -4,6 +4,7 @@ import { AuthContext } from '~/context/AuthContext'
 
 const Navbar = ({ navbar }: { navbar: NavbarProps }) => {
   const { logout, isLogged } = useContext(AuthContext)
+  console.log(isLogged)
 
   return (
     <nav className="hidden md:block bg-opacity-50 backdrop-blur-lg px-4 fixed w-full top-0 z-50">
@@ -27,7 +28,12 @@ const Navbar = ({ navbar }: { navbar: NavbarProps }) => {
             </button>
           ))}
           <button
-            onClick={isLogged ? logout : () => window.location.assign('/login')}
+            onClick={() => {
+              if (isLogged) {
+                logout()
+              }
+              window.location.assign('/login')
+            }}
             className="bg-[#5bc592] text-[#f7f8fa] px-4 py-2 rounded-full"
           >
             {isLogged ? 'Cerrar sesión' : 'Acceder'}

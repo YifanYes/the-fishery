@@ -1,9 +1,11 @@
 import { Head } from '@inertiajs/react'
 import { FormikValues, useFormik } from 'formik'
-import { useContext, useMemo } from 'react'
+import { useContext, useEffect, useMemo } from 'react'
 import * as Yup from 'yup'
 import { AuthContext } from '~/context/AuthContext'
 import { FormHelper } from '~/helpers'
+import { Cookie } from '~/services'
+import Config from '~/services/Config.service'
 
 const Register = () => {
   const { register, isLogged } = useContext(AuthContext)
@@ -33,9 +35,14 @@ const Register = () => {
     onSubmit,
   })
 
-  if (isLogged) {
-    return window.location.assign('/')
-  }
+  useEffect(() => {
+    const accessToken = Cookie.get(Config.token)
+
+    if (isLogged && accessToken) {
+      window.location.assign('/')
+      return
+    }
+  }, [isLogged])
 
   return (
     <>
