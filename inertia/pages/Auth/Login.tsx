@@ -1,11 +1,13 @@
 import { Head } from '@inertiajs/react'
 import { FormikValues, useFormik } from 'formik'
-import { useMemo } from 'react'
+import { useContext, useMemo } from 'react'
 import * as Yup from 'yup'
+import { AuthContext } from '~/context/AuthContext'
 import { FormHelper } from '~/helpers'
-import { User } from '~/models'
 
 const Login = () => {
+  const { login, isLogged } = useContext(AuthContext)
+
   const validationSchema = useMemo(
     () =>
       Yup.object({
@@ -16,9 +18,7 @@ const Login = () => {
   )
 
   const onSubmit = async ({ email, password }: FormikValues) => {
-    await new User().login({ email, password }).then(() => {
-      window.location.assign('/')
-    })
+    await login({ email, password })
   }
 
   const { values, errors, touched, setFieldTouched, handleSubmit, setFieldValue } = useFormik({
@@ -26,6 +26,10 @@ const Login = () => {
     validationSchema,
     onSubmit,
   })
+
+  if (isLogged) {
+    return window.location.assign('/')
+  }
 
   return (
     <>
