@@ -1,4 +1,6 @@
+import { User } from '~/models'
+
 export type UserSliceType = {
-  user?: any
-  setUser: (user?: any) => void
+  user?: User
+  setUser: (user?: User) => void
 }

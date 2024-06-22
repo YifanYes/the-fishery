@@ -1,6 +1,10 @@
+import { useContext } from 'react'
 import { Logo } from '~/components/atoms'
+import { AuthContext } from '~/context/AuthContext'
 
 const Navbar = ({ navbar }: { navbar: NavbarProps }) => {
+  const { logout, isLogged } = useContext(AuthContext)
+
   return (
     <nav className="hidden md:block bg-opacity-50 backdrop-blur-lg px-4 fixed w-full top-0 z-50">
       <div className="mx-auto flex flex-row justify-between items-center">
@@ -22,6 +26,17 @@ const Navbar = ({ navbar }: { navbar: NavbarProps }) => {
               {label}
             </button>
           ))}
+          <button
+            onClick={() => {
+              if (isLogged) {
+                logout()
+              }
+              window.location.assign('/login')
+            }}
+            className="bg-[#5bc592] text-[#f7f8fa] px-4 py-2 rounded-full"
+          >
+            {isLogged ? 'Cerrar sesión' : 'Acceder'}
+          </button>
         </div>
       </div>
     </nav>

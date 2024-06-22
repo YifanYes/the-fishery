@@ -13,13 +13,7 @@ export const hero: HeroProps = {
 
 export const navbar: NavbarProps = {
   logo: true,
-  buttons: [
-    {
-      label: 'Acceder',
-      type: 'primary',
-      onClick: () => window.location.assign('/login'),
-    },
-  ],
+  buttons: [],
   links: [
     {
       href: 'home',
